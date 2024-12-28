@@ -1,0 +1,242 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4 url('https://i.pinimg.com/474x/43/6d/69/436d69ca1a20f64a1decf2e908006b49.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Snowflake Animation */
+@keyframes snow {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(600px); }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10px;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    opacity: 0.8;
+    animation: snow 10s linear infinite;
+}
+
+/* Glassmorphism Styles */
+.glass {
+    background: rgba(173, 216, 230, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(170, 13, 13, 0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(5, 97, 126, 0.63);
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Header */
+#main-header {
+    background: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    text-align: center;
+    color: #06500a;
+}
+
+#main-header h1 {
+    margin: 0;
+}
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#main-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#main-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hover Effects with Animation */
+#main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff6347;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+#main-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Sections */
+section {
+    padding: 20px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 5s ease-in-out, opacity 5s ease-in-out; /* Increased animation time */
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slideInUp 5s forwards;
+    cursor: pointer;
+    animation-delay: var(--animation-delay);
+}
+
+section:hover { 
+    transform: scale(1.05); /* Zoom-in effect */ 
+    opacity: 1; /* Increase opacity on hover */ 
+} 
+/* Article Block Hover Animation */ 
+
+article { 
+    transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out; 
+} 
+
+article:hover { 
+    transform: scale(1.05); /* Scale up effect */ 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow effect */ 
+}
+
+/* Keyframe Animation */
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+h2 {
+    color: #333;
+}
+
+p {
+    margin: 10px 0;
+}
+
+/* Button Styles */
+/* Button Styles */
+button {
+    background-color: #42bef0; /* Green color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px; /* Adjusted border radius */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #2bd614; /* Darker green on hover */
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Back to Top Arrow */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #42c6ee; /* Green color */
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.1); /* Zoom effect */
+}
+
+
+/* Footer */
+#main-footer {
+    background: rgba(51, 51, 51, 0.8);
+    color: #f0550d;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+#footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#footer-nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+}
+
+#footer-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ff6347;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+#footer-nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Specific Sections */
+.hemisphere,
+.celebration {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 5px solid rgba(131, 13, 13, 0.8);
+}
