@@ -33,7 +33,7 @@ window.addEventListener('scroll', () => {
 window.onscroll = function() {
     var topButton = document.querySelector('.back-to-top');
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        topButton.style.display = " ";
+        topButton.style.display = "block ";
     } else {
         topButton.style.display = "none";
     }
